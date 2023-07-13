@@ -23,9 +23,11 @@ class RestaurantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $restaurants = Restaurant::all();
+
+        return view('admin.pages.Restaurant.create', compact('restaurants'));
     }
 
     /**
@@ -36,7 +38,13 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->all();
+        $slug = Restaurant::generateSlug($request->name);
+        $form_data['slug'] = $slug;
+        $newRestaurant = new Restaurant();
+        $newRestaurant->fill($form_data);
+        $newRestaurant->save();
+        return redirect()->route('admin.dashboard');
     }
 
     /**

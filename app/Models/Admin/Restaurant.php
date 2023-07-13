@@ -2,6 +2,7 @@
 
 namespace App\Models\Admin;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,6 +12,10 @@ class Restaurant extends Model
 
     protected $table = 'restaurants';
 
+    public static function generateSlug($name)
+    {
+        return Str::slug($name, '-');
+    }
 
     protected $fillable = [
         'user_id',

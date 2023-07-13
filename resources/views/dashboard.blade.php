@@ -16,8 +16,10 @@
                         {{ session('status') }}
                     </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                </div>
+                <div>
+                    
+                    <a href="{{route('admin.restaurant.create')}}">Crea ristorante</a>
                 </div>
             </div>
         </div>
