@@ -22,6 +22,7 @@
                         <a href="{{route('admin.restaurant.create')}}">Crea ristorante</a>
                     </div>
                 @endif
+
             </div>
         </div>
     </div>
