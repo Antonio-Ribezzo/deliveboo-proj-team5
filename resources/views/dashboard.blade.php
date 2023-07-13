@@ -18,8 +18,9 @@
                     @endif
                 </div>
                 <div>
-                    
-                    <a href="{{route('admin.restaurant.create')}}">Crea ristorante</a>
+                    @if($user->id)
+                     <a href="{{route('admin.restaurant.create')}}">Crea ristorante</a>
+                     @endif
                 </div>
             </div>
         </div>

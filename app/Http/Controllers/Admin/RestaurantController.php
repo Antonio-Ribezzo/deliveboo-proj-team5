@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Restaurant;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RestaurantController extends Controller
@@ -27,7 +28,9 @@ class RestaurantController extends Controller
     {
         $restaurants = Restaurant::all();
 
-        return view('admin.pages.Restaurant.create', compact('restaurants'));
+        $users = User::all();
+
+        return view('admin.pages.Restaurant.create', compact('restaurants', 'users'));
     }
 
     /**
@@ -38,6 +41,7 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
+
         $form_data = $request->all();
         $slug = Restaurant::generateSlug($request->name);
         $form_data['slug'] = $slug;
@@ -55,7 +59,6 @@ class RestaurantController extends Controller
      */
     public function show(Restaurant $restaurant)
     {
-        //
     }
 
     /**
