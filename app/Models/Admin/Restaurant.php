@@ -2,6 +2,8 @@
 
 namespace App\Models\Admin;
 
+use App\Models\Item;
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

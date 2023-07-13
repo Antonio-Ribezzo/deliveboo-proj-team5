@@ -17,11 +17,11 @@
                     </div>
                     @endif
                 </div>
-                <div>
-                    @if($user->id)
-                     <a href="{{route('admin.restaurant.create')}}">Crea ristorante</a>
-                     @endif
-                </div>
+                @if (empty($user->restaurant_id))
+                    <div>
+                        <a href="{{route('admin.restaurant.create')}}">Crea ristorante</a>
+                    </div>
+                @endif
             </div>
         </div>
     </div>

@@ -11,7 +11,7 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $user = User::all();
+        $user = User::find(auth()->user()->id);
         return view('dashboard', compact('user'));
     }
 }

@@ -48,6 +48,9 @@ class RestaurantController extends Controller
         $newRestaurant = new Restaurant();
         $newRestaurant->fill($form_data);
         $newRestaurant->save();
+        $logged_user = User::find(auth()->user()->id);
+        $logged_user->restaurant_id = $newRestaurant->id;
+        $logged_user->save();
         return redirect()->route('admin.dashboard');
     }
 
