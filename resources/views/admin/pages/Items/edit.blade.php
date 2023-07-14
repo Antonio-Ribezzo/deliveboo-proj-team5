@@ -51,10 +51,13 @@
                     </select>
                 </div> --}}
               
-               <button type="submit" class="btn btn-primary mt-3">Modifica</button>
+               <button type="submit" class="btn btn-primary my-3">Modifica</button>
 
                </form>
+
           </div>
+          
+          <a class="rounded-circle bg-primary p-2 text-white text-decoration-none" href="{{ route('admin.items.index')}}">&larr;</a>
      </div>
 
 @endsection
