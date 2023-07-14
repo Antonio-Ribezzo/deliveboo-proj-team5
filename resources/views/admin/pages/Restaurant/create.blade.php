@@ -28,14 +28,16 @@
                     <input type="text" class="form-control" name="p_iva">
                </div>
 
-               {{-- <div class="form-group">
+               <div class="form-group">
                     <label class="form-label">Categoria</label>
-                    <select class="form-control" name="category_id">
-                        @foreach($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->nome }}</option>
+                    <div class="d-flex flex-column">
+                        @foreach($types as $type)
+                            <label>
+                                <input class="" type="checkbox" name="category_id[]" value="{{ $type->id }}"> {{ $type->name }}
+                            </label>
                         @endforeach
-                    </select>
-                </div> --}}
+                    </div>
+                </div>
               
                <button type="submit" class="btn btn-primary mt-3">Crea</button>
 

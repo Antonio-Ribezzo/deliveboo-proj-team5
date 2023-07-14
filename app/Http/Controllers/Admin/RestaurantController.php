@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Restaurant;
+use App\Models\Admin\Type;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -27,10 +28,10 @@ class RestaurantController extends Controller
     public function create(Request $request)
     {
         $restaurants = Restaurant::all();
-
+        $types = Type::all();
         $users = User::all();
 
-        return view('admin.pages.Restaurant.create', compact('restaurants', 'users'));
+        return view('admin.pages.Restaurant.create', compact('restaurants', 'users', 'types'));
     }
 
     /**
@@ -46,10 +47,15 @@ class RestaurantController extends Controller
         $slug = Restaurant::generateSlug($request->name);
         $form_data['slug'] = $slug;
 
+
+
         $newRestaurant = new Restaurant();
         $newRestaurant->fill($form_data);
         $newRestaurant->user_id = auth()->user()->id;
         $newRestaurant->save();
+
+        $newRestaurant->types()->sync($request->input('category_id'));
+
 
         $logged_user = User::find(auth()->user()->id);
         $logged_user->restaurant_id = $newRestaurant->id;
