@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin\Restaurant;
 use App\Models\Item;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -25,9 +26,11 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $items = Item::all();
+
+        return view('admin.pages.Items.create', compact('items'));
     }
 
     /**
@@ -38,7 +41,18 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->all();
+
+        $newItem = new Item();
+        $newItem->fill($form_data);
+
+        $newItem->save();
+
+        $logged_restaurant = Restaurant::find(auth()->user()->id);
+        $logged_restaurant->restaurant_id = $newItem->id;
+        $logged_restaurant->save();
+
+        return redirect()->route('admin.items.index');
     }
 
     /**

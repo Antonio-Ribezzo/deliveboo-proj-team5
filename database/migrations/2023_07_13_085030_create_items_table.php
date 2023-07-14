@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('ingredients');
             $table->decimal('price', 6, 2);
-            $table->boolean('available');
+            // $table->boolean('available');
             $table->timestamps();
         });
     }

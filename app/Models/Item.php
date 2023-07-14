@@ -12,6 +12,13 @@ class Item extends Model
 
     protected $table = 'items';
 
+    protected $fillable = [
+        'name',
+        'ingredients',
+        'price',
+        'available',
+    ];
+
     public function restaurant()
     {
         return $this->belongsTo(Restaurant::class);
