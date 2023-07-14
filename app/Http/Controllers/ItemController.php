@@ -6,6 +6,7 @@ use App\Models\Admin\Restaurant;
 use App\Models\Item;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ItemController extends Controller
 {
@@ -48,9 +49,8 @@ class ItemController extends Controller
 
         $newItem->save();
 
-        $logged_restaurant = Restaurant::find(auth()->user()->id);
-        $logged_restaurant->restaurant_id = $newItem->id;
-        $logged_restaurant->save();
+        $logged_restaurant = Restaurant::where('user_id', Auth::id())->first();
+        $logged_restaurant->items()->save($newItem);
 
         return redirect()->route('admin.items.index');
     }
