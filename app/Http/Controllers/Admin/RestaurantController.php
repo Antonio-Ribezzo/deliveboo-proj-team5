@@ -45,9 +45,12 @@ class RestaurantController extends Controller
         $form_data = $request->all();
         $slug = Restaurant::generateSlug($request->name);
         $form_data['slug'] = $slug;
+
         $newRestaurant = new Restaurant();
         $newRestaurant->fill($form_data);
+        $newRestaurant->user_id = auth()->user()->id;
         $newRestaurant->save();
+
         $logged_user = User::find(auth()->user()->id);
         $logged_user->restaurant_id = $newRestaurant->id;
         $logged_user->save();

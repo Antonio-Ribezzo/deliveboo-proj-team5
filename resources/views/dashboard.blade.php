@@ -10,6 +10,8 @@
             <div class="card">
                 <div class="card-header">{{ __('User Dashboard') }}</div>
 
+               
+
                 <div class="card-body">
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
@@ -21,6 +23,8 @@
                     <div>
                         <a href="{{route('admin.restaurant.create')}}">Crea ristorante</a>
                     </div>
+                @else
+                    <h3>{{$restaurant->name}}</h3>
                 @endif
 
             </div>
