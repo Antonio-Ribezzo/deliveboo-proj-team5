@@ -23,32 +23,26 @@
                     <input type="text" class="form-control" name="ingredients" >
                </div>
 
-               <div class="form-group">
+               <div class="form-group mb-3">
                     <label class="form-label">price</label>
                     <input type="text" class="form-control" name="price">
                </div>
 
-               {{-- <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="false">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                      False
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="true" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        True
-                    </label>
-                </div> --}}
 
-               {{-- <div class="form-group">
-                    <label class="form-label">Categoria</label>
-                    <select class="form-control" name="category_id">
-                        @foreach($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->nome }}</option>
-                        @endforeach
-                    </select>
-                </div> --}}
+
+               <div class="form-check">
+                    <input class="form-check-input" type="radio" name="available" id="flexRadio" checked value="true">
+                    <label class="form-check-label" for="available">
+                         Disponibile
+                    </label>
+               </div>
+
+               <div class="form-check">
+                    <input class="form-check-input" type="radio" name="available" id="flexRadioChecked" value="false">
+                    <label class="form-check-label" for="available">
+                         Non disponibile
+                    </label>
+               </div>
               
                <button type="submit" class="btn btn-primary mt-3">Crea</button>
 

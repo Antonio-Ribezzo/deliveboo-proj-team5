@@ -47,8 +47,11 @@ class ItemController extends Controller
     {
         $form_data = $request->all();
 
+        $available = ($_POST['available'] == 'true') ? 1 : 0;
+
         $newItem = new Item();
         $newItem->fill($form_data);
+        $newItem->available = $available;
 
         $newItem->save();
 
@@ -91,6 +94,11 @@ class ItemController extends Controller
     {
         $form_data = $request->all();
 
+        $available = ($form_data['available'] == 'true') ? 1 : 0;
+
+        $form_data['available'] = $available;
+
+        // dd($form_data);
         $item->update($form_data);
 
         $logged_restaurant = Restaurant::where('user_id', Auth::id())->first();

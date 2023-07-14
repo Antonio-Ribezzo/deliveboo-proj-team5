@@ -29,27 +29,19 @@
                     <input type="text" class="form-control" name="price" value="{{ old('price') ?? $item->price }}">
                </div>
 
-               {{-- <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="false">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                      False
+               <div class="form-check">
+                    <input class="form-check-input" type="radio" name="available" id="flexRadio" value="true" {{ ($item->available == true)? "checked" : "" }}>
+                    <label class="form-check-label" for="available">
+                         Disponibile
                     </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="true" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        True
-                    </label>
-                </div> --}}
+               </div>
 
-               {{-- <div class="form-group">
-                    <label class="form-label">Categoria</label>
-                    <select class="form-control" name="category_id">
-                        @foreach($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->nome }}</option>
-                        @endforeach
-                    </select>
-                </div> --}}
+               <div class="form-check">
+                    <input class="form-check-input" type="radio" name="available" id="flexRadioChecked" value="false" {{ ($item->available == false)? "checked" : "" }}>
+                    <label class="form-check-label" for="available">
+                         Non disponibile
+                    </label>
+               </div>
               
                <button type="submit" class="btn btn-primary my-3">Modifica</button>
 
