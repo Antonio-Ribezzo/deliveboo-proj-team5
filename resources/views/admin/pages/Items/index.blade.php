@@ -18,7 +18,7 @@
                         <h3>{{ $elem->name }}</h3>
                     </div>
 
-                    <div class="d-flex">
+                    <div class="d-flex justify-content-between align-items-center">
                         <a class="btn btn-success me-3" href="{{ route('admin.items.show', $elem) }}">Visualizza Piatto</a>
 
                         <a class="btn btn-primary me-3" href="{{ route('admin.items.edit', $elem) }}">Modifica Piatto</a>
