@@ -14,7 +14,18 @@
     <div class="mt-5">
         @foreach ($items as $elem)
 
-        <h3>{{$elem->name}}</h3>
+        <div class="d-flex justify-content-between">
+            <div>
+                <h3>{{$elem->name}}</h3>
+            </div>
+
+            <div>
+                <a class="btn btn-success me-3" href="{{route('admin.items.show', $elem )}}">Visualizza Piatto</a>
+                
+                <a class="btn btn-primary" href="{{route('admin.items.edit', $elem )}}">Modifica Piatto</a>
+            </div> 
+        </div>
+        
             
         @endforeach
     </div>

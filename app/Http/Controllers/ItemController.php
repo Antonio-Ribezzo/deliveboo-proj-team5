@@ -66,7 +66,7 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-        //
+        return view('admin.pages.Items.show', compact('item'));
     }
 
     /**
@@ -77,7 +77,7 @@ class ItemController extends Controller
      */
     public function edit(Item $item)
     {
-        //
+        return view('admin.pages.Items.edit', compact('item'));
     }
 
     /**
@@ -89,7 +89,14 @@ class ItemController extends Controller
      */
     public function update(Request $request, Item $item)
     {
-        //
+        $form_data = $request->all();
+
+        $item->update($form_data);
+
+        $logged_restaurant = Restaurant::where('user_id', Auth::id())->first();
+        $logged_restaurant->items()->save($item);
+
+        return redirect()->route('admin.items.index');
     }
 
     /**
