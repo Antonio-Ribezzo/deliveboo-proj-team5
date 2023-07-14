@@ -17,9 +17,12 @@ class ItemController extends Controller
      */
     public function index()
     {
+
         $user = User::find(auth()->user()->id);
 
-        return view('admin.pages.Items.index', compact('user'));
+        $items = $user->restaurant->items;
+
+        return view('admin.pages.Items.index', compact('user', 'items'));
     }
 
     /**
