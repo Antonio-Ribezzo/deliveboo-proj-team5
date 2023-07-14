@@ -5,6 +5,8 @@ use App\Http\Controllers\Admin\RestaurantController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 
+use App\Http\Controllers\ItemController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +36,11 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
     // creazione ristorante e/o visualizzazione
     Route::resource('/restaurant', RestaurantController::class);
+
+    // rotta risorsa items
+    Route::resource('/restaurant/items', ItemController::class);
+
 });
+
 
 require __DIR__ . '/auth.php';

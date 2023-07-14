@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
@@ -14,7 +15,9 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        $user = User::find(auth()->user()->id);
+
+        return view('admin.pages.Items.index', compact('user'));
     }
 
     /**

@@ -24,7 +24,8 @@
                         <a href="{{route('admin.restaurant.create')}}">Crea ristorante</a>
                     </div>
                 @else
-                    <h3>{{$restaurant->name}}</h3>
+                    <h3 class="text-center my-2">{{$restaurant->name}}</h3>
+                    <a href="{{route('admin.items.index')}}"><button class="btn btn-primary">Vai al menu</button></a>
                 @endif
 
             </div>
