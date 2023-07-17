@@ -23,13 +23,41 @@
 
                         <a class="btn btn-primary me-3" href="{{ route('admin.items.edit', $elem) }}">Modifica Piatto</a>
 
-                        <form action="{{ route('admin.items.destroy', $elem) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal">
+                          Cancella Piatto
+                        </button>
 
-                            <button class="btn btn-danger" type="submit"
-                                onclick="return confirm('Are you sure to delete it?')">Cancella piatto</button>
-                        </form>
+                        {{-- modale elimina piatto --}}
+
+                        <div class="modal" tabindex="-1" id="modal">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title">Elimina piatto</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"                         aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                <p>Sei sicuro di voler eliminare il piatto?</p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+
+                                <form action="{{ route('admin.items.destroy', $elem) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+
+                                    <button class="btn btn-danger" type="submit">Cancella piatto</button>
+                                </form>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+
+
+                        
                     </div>
                 </div>
             @endforeach

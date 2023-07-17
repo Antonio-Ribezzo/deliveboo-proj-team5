@@ -8,28 +8,28 @@
                 @csrf
                 @method('PUT')
 
-                <div class="form-group">
-                    <label class="form-label">Nome </label>
-                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
+                <div class="form-group mb-3">
+                    <label class="form-label">Nome*</label>
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" required maxlength="100"
                         value="{{ old('name') ?? $item->name }}">
                     @error('name')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
 
-                <div class="form-group">
-                    <label class="form-label">Ingredienti</label>
-                    <input type="text" class="form-control @error('ingredients') is-invalid @enderror" name="ingredients"
+                <div class="form-group mb-3">
+                    <label class="form-label">Ingredienti*</label>
+                    <input type="text" class="form-control @error('ingredients') is-invalid @enderror" name="ingredients" required
                         value="{{ old('ingredients') ?? $item->ingredients }}">
                     @error('ingredients')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
 
-                <div class="form-group">
-                    <label class="form-label">Prezzo</label>
-                    <input type="text" required id="price-input"
-                        class="form-control @error('price') is-invalid @enderror" name="price"
+                <div class="form-group mb-3">
+                    <label class="form-label">Prezzo*</label>
+                    <input type="text" id="price-input"
+                        class="form-control @error('price') is-invalid @enderror" name="price" required
                         value="{{ old('price') ?? $item->price }}">
                     @error('price')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -50,13 +50,15 @@
                     </label>
                 </div>
 
-                <div class="form-check">
+                <div class="form-check mb-3">
                     <input class="form-check-input" type="radio" name="available" id="flexRadioChecked" value="false"
                         {{ $item->available == false ? 'checked' : '' }}>
                     <label class="form-check-label" for="available">
                         Non disponibile
                     </label>
                 </div>
+
+                <p class="my-4"><b>*Campo obbligatorio</b></p>
 
                 <button type="submit" id="submit-btn" class="btn btn-primary my-3">Modifica</button>
 

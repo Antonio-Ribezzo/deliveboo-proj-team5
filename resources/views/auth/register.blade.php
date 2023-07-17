@@ -34,7 +34,7 @@
                                     class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="password" type="password" required
+                                    <input id="password" type="password" required min="8"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         autocomplete="new-password">
 
@@ -59,7 +59,7 @@
                             <div class="row mb-4">
                                 <label class="col-md-4 col-form-label text-md-right">Nome Attività </label>
                                 <div class="col-md-6">
-                                    <input type="text" required class="form-control @error('name') is-invalid @enderror"
+                                    <input type="text" maxlength="100" required class="form-control @error('name') is-invalid @enderror"
                                         name="name">
                                     @error('name')
                                         <div class="alert alert-danger">

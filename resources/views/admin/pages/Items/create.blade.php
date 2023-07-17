@@ -8,8 +8,8 @@
                 @csrf
 
                 <div class="form-group">
-                    <label class="form-label">Nome</label>
-                    <input type="text" maxlength="100" class="form-control @error('name') is-invalid @enderror"
+                    <label class="form-label">Nome*</label>
+                    <input type="text" maxlength="100" class="form-control @error('name') is-invalid @enderror" required
                         name="name">
                     @error('name')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -17,8 +17,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label">Ingredienti</label>
-                    <input type="text" class="form-control @error('ingredients') is-invalid @enderror"
+                    <label class="form-label">Ingredienti*</label>
+                    <input type="text" class="form-control @error('ingredients') is-invalid @enderror" required
                         name="ingredients">
                     @error('ingredients')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -26,9 +26,9 @@
                 </div>
 
                 <div class="form-group mb-3">
-                    <label class="form-label">Prezzo</label>
-                    <input type="text" required id="price-input"
-                        class="form-control @error('price') is-invalid @enderror" name="price">
+                    <label class="form-label">Prezzo*</label>
+                    <input type="text"  id="price-input"
+                        class="form-control @error('price') is-invalid @enderror" name="price" required>
                     @error('price')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
@@ -53,6 +53,8 @@
                         Non disponibile
                     </label>
                 </div>
+
+                <p class="my-4"><b>*Campo obbligatorio</b></p>
 
                 <button type="submit" id="submit-btn" class="btn btn-primary mt-3">Crea</button>
 

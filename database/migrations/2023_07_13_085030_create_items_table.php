@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name',100);
             $table->text('ingredients');
             $table->decimal('price', 6, 2);
             $table->boolean('available')->default(true);
