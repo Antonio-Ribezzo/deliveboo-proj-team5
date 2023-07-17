@@ -58,6 +58,8 @@
             </script>
             <p id='status' class=" fs-5 text-muted">{{ __('Saved.') }}</p>
             @endif
+            
         </div>
+        
     </form>
 </section>

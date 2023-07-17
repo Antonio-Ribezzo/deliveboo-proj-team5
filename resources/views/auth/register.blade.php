@@ -14,7 +14,7 @@
 
                             <div class="mb-4 row">
                                 <label for="email"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}*</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email" required
@@ -31,10 +31,10 @@
 
                             <div class="mb-4 row">
                                 <label for="password"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Password') }}*</label>
 
                                 <div class="col-md-6">
-                                    <input id="password" type="password" required min="8"
+                                    <input id="password" type="password" required minlength="8"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         autocomplete="new-password">
 
@@ -57,7 +57,7 @@
                             </div>
 
                             <div class="row mb-4">
-                                <label class="col-md-4 col-form-label text-md-right">Nome Attività </label>
+                                <label class="col-md-4 col-form-label text-md-right">Nome Attività* </label>
                                 <div class="col-md-6">
                                     <input type="text" maxlength="100" required class="form-control @error('name') is-invalid @enderror"
                                         name="name">
@@ -70,7 +70,7 @@
                             </div>
 
                             <div class="row mb-4">
-                                <label class="col-md-4 col-form-label text-md-right">Indirizzo</label>
+                                <label class="col-md-4 col-form-label text-md-right">Indirizzo*</label>
                                 <div class="col-md-6">
                                     <input type="text" required
                                         class="form-control @error('address') is-invalid @enderror" name="address">
@@ -81,7 +81,7 @@
                             </div>
 
                             <div class="row mb-4">
-                                <label class="col-md-4 col-form-label text-md-right">Partita Iva</label>
+                                <label class="col-md-4 col-form-label text-md-right">Partita Iva*</label>
                                 <div class="col-md-6">
                                     <input type="text" required class="form-control @error('p_iva') is-invalid @enderror"
                                         name="p_iva">
@@ -91,7 +91,7 @@
                                 </div>
                             </div>
 
-                            <label class="form-label mb-4 mt-4">Categoria:</label>
+                            <label class="form-label mb-4 mt-4">Categoria:*</label>
                             <div class="mb-4 d-flex w-50 ">
                                 <div>
                                     @foreach ($types as $type)
@@ -109,14 +109,15 @@
                                 </div>
                             </div>
 
-                            <div class="mb-4 row mb-0">
-                                <div class="col-md-6 offset-md-4">
+                            <div class="text-center ">
+                                <div class=" justify-content-center d-flex">
                                     <button id="submit-btn" type="submit" class="btn btn-primary">
                                         {{ __('Register') }}
                                     </button>
                                 </div>
                             </div>
                         </form>
+                        <p class="my-4"><b>*Campo obbligatorio</b></p>
                     </div>
                 </div>
             </div>
