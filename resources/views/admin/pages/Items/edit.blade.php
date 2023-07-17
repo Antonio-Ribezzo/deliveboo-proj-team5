@@ -16,17 +16,26 @@
                
                <div class="form-group">
                     <label class="form-label">Nome </label>
-                    <input type="text" class="form-control" name="name" value="{{ old('name') ?? $item->name }}">
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') ?? $item->name }}">
+                    @error('name')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                </div>
 
                <div class="form-group">
                     <label class="form-label">ingredient</label>
-                    <input type="text" class="form-control" name="ingredients" value="{{ old('ingredients') ?? $item->ingredients }}">
+                    <input type="text" class="form-control @error('ingredients') is-invalid @enderror" name="ingredients" value="{{ old('ingredients') ?? $item->ingredients }}">
+                    @error('ingredients')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                </div>
 
                <div class="form-group">
                     <label class="form-label">price</label>
-                    <input type="text" class="form-control" name="price" value="{{ old('price') ?? $item->price }}">
+                    <input type="text" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') ?? $item->price }}">
+                    @error('price')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                </div>
 
                <div class="form-check">

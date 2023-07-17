@@ -14,21 +14,28 @@
                </div> --}}
                
                <div class="form-group">
-                    <label class="form-label">Nome </label>
-                    <input type="text" class="form-control" name="name">
+                    <label class="form-label">Nome</label>
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name">
+                    @error('name')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                </div>
 
                <div class="form-group">
                     <label class="form-label">ingredient</label>
-                    <input type="text" class="form-control" name="ingredients" >
+                    <input type="text" class="form-control @error('ingredients') is-invalid @enderror" name="ingredients">
+                    @error('ingredients')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                </div>
 
                <div class="form-group mb-3">
                     <label class="form-label">price</label>
-                    <input type="text" class="form-control" name="price">
+                    <input type="text" class="form-control @error('price') is-invalid @enderror" name="price">
+                    @error('price')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                </div>
-
-
 
                <div class="form-check">
                     <input class="form-check-input" type="radio" name="available" id="flexRadio" checked value="true">
