@@ -11,19 +11,6 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="mb-4 row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
 
                         <div class="mb-4 row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
@@ -58,6 +45,32 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label class="form-label">Nome </label>
+                            <input type="text" class="form-control" name="name">
+                        </div>
+
+                        <div class="form-group mb-3">
+                             <label class="form-label">Indirizzo</label>
+                             <input type="text" class="form-control" name="address" >
+                        </div>
+
+                        <div class="form-group mb-3">
+                             <label class="form-label">Partita Iva</label>
+                             <input type="text" class="form-control" name="p_iva">
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label class="form-label">Categoria</label>
+                            <div class="d-flex flex-column">
+                            @foreach($types as $type)
+                                <label>
+                                    <input class="" type="checkbox" name="category_id[]" value="{{ $type->id }}"> {{ $type->name }}
+                                </label>
+                            @endforeach
                             </div>
                         </div>
 

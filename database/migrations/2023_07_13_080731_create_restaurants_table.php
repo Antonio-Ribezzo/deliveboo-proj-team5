@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('address');
             $table->string('p_iva');
-            $table->string('slug');
+            //$table->string('slug');
             $table->timestamps();
         });
     }

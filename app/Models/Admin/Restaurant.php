@@ -14,17 +14,17 @@ class Restaurant extends Model
 
     protected $table = 'restaurants';
 
-    public static function generateSlug($name)
-    {
-        return Str::slug($name, '-');
-    }
+    // public static function generateSlug($name)
+    // {
+    //     return Str::slug($name, '-');
+    // }
 
     protected $fillable = [
         'user_id',
         'name',
         'address',
         'p_iva',
-        'slug',
+        //'slug',
     ];
 
     public function user()
