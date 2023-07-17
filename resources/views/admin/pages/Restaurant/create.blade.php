@@ -13,22 +13,22 @@
                  <input type="hidden" name="cover_image" id="cover_image" value="">
                </div> --}}
                
-               <div class="form-group">
+               <div class="form-group mb-3">
                     <label class="form-label">Nome </label>
                     <input type="text" class="form-control" name="name">
                </div>
 
-               <div class="form-group">
-                    <label class="form-label">indirizzo</label>
+               <div class="form-group mb-3">
+                    <label class="form-label">Indirizzo</label>
                     <input type="text" class="form-control" name="address" >
                </div>
 
-               <div class="form-group">
-                    <label class="form-label">partita iva</label>
+               <div class="form-group mb-3">
+                    <label class="form-label">Partita Iva</label>
                     <input type="text" class="form-control" name="p_iva">
                </div>
 
-               <div class="form-group">
+               <div class="form-group mb-3">
                     <label class="form-label">Categoria</label>
                     <div class="d-flex flex-column">
                         @foreach($types as $type)
