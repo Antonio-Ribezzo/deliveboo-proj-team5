@@ -6,12 +6,6 @@
           <div class="row">
                <form class="p-0" action="{{ route('admin.items.store') }}" method="POST" enctype="multipart/form-data">
                @csrf
-
-               {{-- <div class="mb-3">
-                 <label for="image" class="form-label">Choose file</label>
-                 <input type="file" class="form-control" name="image" id="image" aria-describedby="fileHelpId" onchange="handleFileSelect(event)">
-                 <input type="hidden" name="cover_image" id="cover_image" value="">
-               </div> --}}
                
                <div class="form-group">
                     <label class="form-label">Nome</label>
@@ -22,7 +16,7 @@
                </div>
 
                <div class="form-group">
-                    <label class="form-label">ingredient</label>
+                    <label class="form-label">Ingredienti</label>
                     <input type="text" class="form-control @error('ingredients') is-invalid @enderror" name="ingredients">
                     @error('ingredients')
                         <div class="alert alert-danger">{{ $message }}</div>
@@ -30,11 +24,16 @@
                </div>
 
                <div class="form-group mb-3">
-                    <label class="form-label">price</label>
+                    <label class="form-label">Prezzo</label>
                     <input type="text" class="form-control @error('price') is-invalid @enderror" name="price">
                     @error('price')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
+               </div>
+
+               <div class="mb-3">
+                    <label for="formFile" class="form-label">Carica immagine</label>
+                    <input class="form-control" type="file" id="formFile" name="cover_image">
                </div>
 
                <div class="form-check">
@@ -44,10 +43,6 @@
                     </label>
                </div>
 
-               <div class="mb-3">
-                    <label for="formFile" class="form-label">Default file input example</label>
-                    <input class="form-control" type="file" id="formFile" name="cover_image">
-               </div>
 
                <div class="form-check">
                     <input class="form-check-input" type="radio" name="available" id="flexRadioChecked" value="false">
