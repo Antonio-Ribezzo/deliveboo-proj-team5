@@ -9,6 +9,7 @@ use App\Models\Item;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ItemController extends Controller
 {
@@ -50,6 +51,13 @@ class ItemController extends Controller
         $form_data = $request->all();
 
         $available = ($_POST['available'] == 'true') ? 1 : 0;
+
+        if ($request->hasFile('cover_image')) {
+
+            $path = Storage::disk('public')->put('item_images', $request->cover_image);
+
+            $form_data['cover_image'] = $path;
+        }
 
         $newItem = new Item();
         $newItem->fill($form_data);
@@ -99,6 +107,18 @@ class ItemController extends Controller
         $available = ($form_data['available'] == 'true') ? 1 : 0;
 
         $form_data['available'] = $available;
+
+        if ($request->hasFile('cover_image')) {
+
+
+            if ($item->cover_image) {
+                Storage::delete($item->cover_image);
+            }
+            //Genere un path di dove verrà salvata l'immagine nel progetto
+            $path = Storage::disk('public')->put('item_images', $request->cover_image);
+
+            $form_data['cover_image'] = $path;
+        }
 
         // dd($form_data);
         $item->update($form_data);

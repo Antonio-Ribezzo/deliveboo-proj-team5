@@ -44,6 +44,11 @@
                     </label>
                </div>
 
+               <div class="mb-3">
+                    <label for="formFile" class="form-label">Default file input example</label>
+                    <input class="form-control" type="file" id="formFile" name="cover_image">
+               </div>
+
                <div class="form-check">
                     <input class="form-check-input" type="radio" name="available" id="flexRadioChecked" value="false">
                     <label class="form-check-label" for="available">

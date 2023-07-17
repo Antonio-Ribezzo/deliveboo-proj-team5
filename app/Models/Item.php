@@ -16,6 +16,7 @@ class Item extends Model
         'name',
         'ingredients',
         'price',
+        'cover_image',
         'available',
     ];
 

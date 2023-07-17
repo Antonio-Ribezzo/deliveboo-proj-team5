@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('ingredients');
             $table->decimal('price', 6, 2);
             $table->boolean('available')->default(true);
+            $table->longText('cover_image')->nullable();
             $table->timestamps();
         });
     }
