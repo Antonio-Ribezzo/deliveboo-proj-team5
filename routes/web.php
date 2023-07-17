@@ -39,7 +39,6 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
     // rotta risorsa items
     Route::resource('/items', ItemController::class);
-
 });
 
 

@@ -48,29 +48,37 @@
                             </div>
                         </div>
 
-                        <div class="form-group mb-3">
-                            <label class="form-label">Nome </label>
-                            <input type="text" class="form-control" name="name">
+                        <div class="row mb-4">
+                            <label class="col-md-4 col-form-label text-md-right">Nome Attività </label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="name">
+                            </div>
                         </div>
 
-                        <div class="form-group mb-3">
-                             <label class="form-label">Indirizzo</label>
-                             <input type="text" class="form-control" name="address" >
+                        <div class="row mb-4">
+                             <label class="col-md-4 col-form-label text-md-right">Indirizzo</label>
+                             <div  class="col-md-6">
+                                 <input type="text" class="form-control" name="address" >
+                             </div>
                         </div>
 
-                        <div class="form-group mb-3">
-                             <label class="form-label">Partita Iva</label>
-                             <input type="text" class="form-control" name="p_iva">
+                        <div class="row mb-4">
+                             <label class="col-md-4 col-form-label text-md-right">Partita Iva</label>
+                             <div  class="col-md-6">
+                                 <input type="text" class="form-control" name="p_iva">
+                             </div>
                         </div>
 
-                        <div class="form-group mb-3">
-                            <label class="form-label">Categoria</label>
-                            <div class="d-flex flex-column">
-                            @foreach($types as $type)
-                                <label>
-                                    <input class="" type="checkbox" name="category_id[]" value="{{ $type->id }}"> {{ $type->name }}
-                                </label>
-                            @endforeach
+                        <label class="form-label mb-4 mt-4">Categoria:</label>
+                        <div class="mb-4 d-flex w-50 ">
+                            <div>
+                                 @foreach($types as $type)
+                                  <div>
+                                     <label>
+                                         <input class="" type="checkbox" name="category_id[]" value="{{ $type->id }}"> {{ $type->name }}
+                                     </label>
+                                 </div>
+                                 @endforeach
                             </div>
                         </div>
 
