@@ -40,6 +40,7 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'address' => ['required', 'string', 'max:255'],
             'p_iva' => ['required', 'string', 'max:255'],
+            'category_id'=>['required','array', 'min:1']
         ]);
 
         $user = User::create([

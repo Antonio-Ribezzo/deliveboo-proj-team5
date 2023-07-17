@@ -26,9 +26,9 @@ class UpdateItemRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:100', Rule::unique('items')->ignore($this->item)],
-            // 'ingredients' => ['nullable'],
-            'price' => ['nullable', 'numeric', 'regex:/^\d{1,4}(.\d{1,2})?$/'],
-            'boolean' => ['nullable']
+            'ingredients' => ['required'],
+            'price' => ['required', 'numeric', 'regex:/^\d{1,4}(.\d{1,2})?$/'],
+            // 'boolean' => ['required']
         ];
     }
 }
