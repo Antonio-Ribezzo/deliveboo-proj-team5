@@ -8,7 +8,7 @@
                 @csrf
 
                 <div class="form-group">
-                    <label class="form-label">Nome*</label>
+                    <label class="form-label">Name*</label>
                     <input type="text" maxlength="100" class="form-control @error('name') is-invalid @enderror" required
                         name="name">
                     @error('name')
@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label">Ingredienti*</label>
+                    <label class="form-label">Ingredients*</label>
                     <input type="text" class="form-control @error('ingredients') is-invalid @enderror" required
                         name="ingredients">
                     @error('ingredients')
@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="form-group mb-3">
-                    <label class="form-label">Prezzo*</label>
+                    <label class="form-label">Price*</label>
                     <input type="text"  id="price-input"
                         class="form-control @error('price') is-invalid @enderror" name="price" required>
                     @error('price')
@@ -35,14 +35,14 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="formFile" class="form-label">Carica immagine</label>
+                    <label for="formFile" class="form-label">Upload image</label>
                     <input class="form-control" type="file" id="formFile" name="cover_image">
                 </div>
 
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="available" id="flexRadio" checked value="true">
                     <label class="form-check-label" for="available">
-                        Disponibile
+                        Available
                     </label>
                 </div>
 
@@ -50,13 +50,13 @@
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="available" id="flexRadioChecked" value="false">
                     <label class="form-check-label" for="available">
-                        Non disponibile
+                        Not Available
                     </label>
                 </div>
 
-                <p class="my-4"><b>*Campo obbligatorio</b></p>
+                <p class="my-4"><b>*Required field</b></p>
 
-                <button type="submit" id="submit-btn" class="btn btn-primary mt-3">Crea</button>
+                <button type="submit" id="submit-btn" class="btn btn-primary mt-3">Create dish</button>
 
             </form>
         </div>

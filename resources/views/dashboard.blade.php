@@ -22,20 +22,20 @@
                     @if ($user->restaurant)
                     <div class="d-flex flex-column justify-content-center align-items-center">
                         <h3 class="my-2">{{$restaurant->name}}</h3>
-                        <span class="text-decoration-underline">Indirizzo</span>
+                        <span class="text-decoration-underline">Address</span>
                         <h4 class="my-2">{{$restaurant->address}}</h4>
-                        <span class="text-decoration-underline mb-3">Tipologie</span>
+                        <span class="text-decoration-underline mb-3">Type of Restaurant</span>
                         <ul>
                             @foreach ($restaurant->types as $type)
                                 <li>{{$type->name}}</li>
                             @endforeach
                         </ul>
-                        <a href="{{route('admin.items.index')}}"><button class="btn btn-primary">Vai al menu</button></a>
+                        <a href="{{route('admin.items.index')}}"><button class="btn btn-primary">Go to Menu</button></a>
                     </div>
                 @else
                     <div>
-                        <p>Benvenuto nella tua Dashboard!<br/> Non hai ancora creato un ristorante.</p>
-                        <a href="{{route('admin.restaurant.create')}}">Crea il tuo ristorante</a>
+                        <p>Welcome to Dashboard<br/>You didn't create a new restaurant</p>
+                        <a href="{{route('admin.restaurant.create')}}">Create your restaurant</a>
                     </div>
                 @endif
                 </div>

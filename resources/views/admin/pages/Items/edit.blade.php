@@ -10,7 +10,7 @@
                 @method('PUT')
 
                 <div class="form-group mb-3">
-                    <label class="form-label">Nome*</label>
+                    <label class="form-label">Name*</label>
                     <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" required maxlength="100"
                         value="{{ old('name') ?? $item->name }}">
                     @error('name')
@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="form-group mb-3">
-                    <label class="form-label">Ingredienti*</label>
+                    <label class="form-label">Ingredients*</label>
                     <input type="text" class="form-control @error('ingredients') is-invalid @enderror" name="ingredients" required
                         value="{{ old('ingredients') ?? $item->ingredients }}">
                     @error('ingredients')
@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="form-group mb-3">
-                    <label class="form-label">Prezzo*</label>
+                    <label class="form-label">Price*</label>
                     <input type="text" id="price-input"
                         class="form-control @error('price') is-invalid @enderror" name="price" required
                         value="{{ old('price') ?? $item->price }}">
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="formFile" class="form-label">Carica immagine</label>
+                    <label for="formFile" class="form-label">Upload image</label>
                     <input class="form-control" type="file" id="formFile" name="cover_image">
                 </div>
 
@@ -47,7 +47,7 @@
                     <input class="form-check-input" type="radio" name="available" id="flexRadio" value="true"
                         {{ $item->available == true ? 'checked' : '' }}>
                     <label class="form-check-label" for="available">
-                        Disponibile
+                        Available
                     </label>
                 </div>
 
@@ -55,17 +55,17 @@
                     <input class="form-check-input" type="radio" name="available" id="flexRadioChecked" value="false"
                         {{ $item->available == false ? 'checked' : '' }}>
                     <label class="form-check-label" for="available">
-                        Non disponibile
+                        Not Available
                     </label>
                 </div>
 
-                <p class="my-4"><b>*Campo obbligatorio</b></p>
+                <p class="my-4"><b>*Required field</b></p>
 
-                <button type="submit" id="submit-btn" class="btn btn-primary my-3">Modifica</button>
+                <button type="submit" id="submit-btn" class="btn btn-primary my-3">Edit</button>
 
             </form>
          @else
-            <span class="my-4">Item non trovato</span>
+            <span class="my-4">Not authorized</span>
         @endif
         </div>
 

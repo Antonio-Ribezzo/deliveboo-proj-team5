@@ -79,7 +79,16 @@ class ItemController extends Controller
      */
     public function show(Request $request)
     {
-        $item = User::find(auth()->user()->id)->restaurant->items->find($request->route()->item);
+        // Trova l'item corrispondente all'ID richiesto e al ristorante dell'utente autenticato
+        $item = User::find(auth()->user()->id)
+                    ->restaurant
+                    ->items
+                    ->find($request->route()->item);
+
+        // Se l'item non esiste o non fa parte dello user autenticato, restituisci 401 Unauthorized
+        if (!$item) {
+            abort(401, 'Unauthorized');
+        }
 
         return view('admin.pages.Items.show', compact('item'));
     }
@@ -92,7 +101,16 @@ class ItemController extends Controller
      */
     public function edit(Item $item, Request $request)
     {
-        $item = User::find(auth()->user()->id)->restaurant->items->find($request->route()->item);
+        // Trova l'item corrispondente all'ID richiesto e al ristorantedell'utente autenticato
+        $item = User::find(auth()->user()->id)
+        ->restaurant
+        ->items
+        ->find($request->route()->item);
+
+        // Se l'item non esiste o non fa parte dello user autenticato, restituisci 401      Unauthorized
+        if (!$item) {
+            abort(401, 'Unauthorized');
+    }
 
         return view('admin.pages.Items.edit', compact('item'));
     }
