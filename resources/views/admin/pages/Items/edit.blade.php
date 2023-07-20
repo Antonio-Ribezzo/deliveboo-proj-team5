@@ -4,6 +4,7 @@
     <h1 class=" mt-3  "></h1>
     <div class=" container ">
         <div class="row">
+        @if ($item)
             <form class="p-0" action="{{ route('admin.items.update', $item) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
@@ -63,7 +64,9 @@
                 <button type="submit" id="submit-btn" class="btn btn-primary my-3">Modifica</button>
 
             </form>
-
+         @else
+            <span class="my-4">Item non trovato</span>
+        @endif
         </div>
 
         <a class="rounded-circle bg-primary p-2 text-white text-decoration-none"

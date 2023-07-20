@@ -13,7 +13,8 @@
         <p class="my-4"><b>Price:</b> {{$item->price}}&euro;</p>
         <a class="rounded-circle bg-primary p-2 text-white text-decoration-none" href="{{ route('admin.items.index')}}">&larr;</a>
     @else
-        <span>Item non trovato</span>
+        <span class="d-block my-4">Item non trovato</span>
+        <a class="rounded-circle bg-primary p-2 text-white text-decoration-none" href="{{ route('admin.items.index')}}">&larr;</a>
     @endif
 </div>
 
