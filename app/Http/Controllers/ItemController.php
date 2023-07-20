@@ -90,8 +90,10 @@ class ItemController extends Controller
      * @param  \App\Models\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function edit(Item $item)
+    public function edit(Item $item, Request $request)
     {
+        $item = User::find(auth()->user()->id)->restaurant->items->find($request->route()->item);
+
         return view('admin.pages.Items.edit', compact('item'));
     }
 
