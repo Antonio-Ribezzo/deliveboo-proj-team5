@@ -17,19 +17,19 @@ class TypeSeeder extends Seeder
     {
         $types = [
             'Pizza',
-            'Cibo Cinese',
+            'Chinese cuisine',
             'Kebab',
-            'Gelato',
-            'Dolci',
-            'Cibo Indiano',
-            'Hamburger & Panini',
-            'Colazione',
+            'ice cream',
+            'Sweets',
+            'Indian cuisine',
+            'Hamburger & Sandwich',
+            'Breakfast',
             'Piadina',
-            'Cibo Messicano',
+            'Mexican cuisine',
             'Sushi'
         ];
 
-        foreach($types as $elem){
+        foreach ($types as $elem) {
             $new_type = new Type();
             $new_type->name = $elem;
             $new_type->save();

@@ -11,7 +11,7 @@
 
         <div class="mt-5">
           <div class="row">
-            <table class="table">
+            <table class="table align-middle">
               <thead>
                 <tr>
                   <th scope="col">Id</th>

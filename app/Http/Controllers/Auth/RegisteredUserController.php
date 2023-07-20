@@ -24,7 +24,7 @@ class RegisteredUserController extends Controller
     {
         $types = Type::all();
 
-        return view('auth.register',compact('types'));
+        return view('auth.register', compact('types'));
     }
 
     /**
@@ -35,12 +35,12 @@ class RegisteredUserController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'name' => ['required', 'string', 'max:100'],
             'address' => ['required', 'string', 'max:255'],
-            'p_iva' => ['required', 'string', 'max:255'],
-            'category_id'=>['required','array', 'min:1']
+            'p_iva' => ['required', 'digits:11'],
+            'category_id' => ['required', 'array', 'min:1']
         ]);
 
         $user = User::create([

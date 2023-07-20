@@ -35,6 +35,7 @@
                     @error('price')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
+                    <div id="errorDiv" style="display: none; color: red;">Price cannot be negative.</div>
                 </div>
 
                 <div class="mb-3">
@@ -79,7 +80,8 @@
 
             if (price < 0) {
                 e.preventDefault(); // Blocca l'invio del form
-                alert('Il prezzo non può essere negativo.');
+                const errorDiv = document.getElementById('errorDiv');
+                errorDiv.style.display = 'block'; // Mostra il messaggio di errore
             }
         });
     </script>
