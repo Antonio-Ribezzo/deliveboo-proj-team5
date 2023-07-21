@@ -15,21 +15,14 @@ class ItemController extends Controller
      */
     public function index(Request $request)
     {
-        $query = Item::with(['restaurants']);
-
-        if($request->has('restaurant_id')){
-
-            $restaurant_id = explode(',', $request->restaurant_id);
-
-            $query->whereHas('restaurant', function($query)use($restaurant_id){
-                $query->whereIn('id', $restaurant_id);
-            });
+        if ($request->has('restaurant_id')) {
+            $restaurant_id = $request->input('restaurant_id');
+            $items = Item::where('restaurant_id', $restaurant_id)->get();
+        } else {
+            $items = Item::all();
         }
 
-        $items = $query->get();
-
         return response()->json([
-
             "success" => true,
             "items" => $items,
         ]);
