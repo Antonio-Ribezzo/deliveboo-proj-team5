@@ -15,10 +15,15 @@ class ItemController extends Controller
      */
     public function index(Request $request)
     {
+        //http://127.0.0.1:8000/api/items?restaurant_id=1
+
         if ($request->has('restaurant_id')) {
             $restaurant_id = $request->input('restaurant_id');
             $items = Item::where('restaurant_id', $restaurant_id)->get();
         } else {
+            
+            //http://127.0.0.1:8000/api/items
+
             $items = Item::all();
         }
 
@@ -30,7 +35,7 @@ class ItemController extends Controller
 
     public function show(Item $item)
     {
-        //
+        
     }
 
 }
