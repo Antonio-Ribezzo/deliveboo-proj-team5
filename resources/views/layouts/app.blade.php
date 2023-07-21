@@ -40,7 +40,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('/admin') }}">{{ __('Home') }}</a>
+                            <img src="{{asset('img/deliveboo-high-resolution-logo-color-on-transparent-background.png')}}" alt="" width="200px">
                         </li>
                     </ul>
 
