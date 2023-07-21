@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('p_iva', 11);
             $table->string('slug');
+            $table->longText('restaurant_image')->nullable();
             $table->timestamps();
         });
     }

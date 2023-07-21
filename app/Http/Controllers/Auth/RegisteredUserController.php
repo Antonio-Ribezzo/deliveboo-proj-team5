@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 use App\Models\Admin\Type;
+use Illuminate\Support\Facades\Storage;
 
 class RegisteredUserController extends Controller
 {
@@ -58,6 +59,13 @@ class RegisteredUserController extends Controller
         $slug = Restaurant::generateSlug($request->name);
         
         $restaurantData['slug'] = $slug;
+
+        if ($request->hasFile('restaurant_image')) {
+
+            $path = Storage::disk('public')->put('restaurant_images', $request->restaurant_image);
+
+            $restaurantData['restaurant_image'] = $path;
+        }
 
         $newRestaurant = Restaurant::create($restaurantData);
         
