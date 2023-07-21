@@ -20,3 +20,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/restaurants', [RestaurantController::class, 'index']);
+Route::get('/restaurants/{slug}', [RestaurantController::class, 'show']);

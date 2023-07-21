@@ -55,8 +55,12 @@ class RegisteredUserController extends Controller
             'user_id' => $user->id,
         ];
 
-        $newRestaurant = Restaurant::create($restaurantData);
+        $slug = Restaurant::generateSlug($request->name);
+        
+        $restaurantData['slug'] = $slug;
 
+        $newRestaurant = Restaurant::create($restaurantData);
+        
         if ($newRestaurant) {
             $user->restaurant_id = $newRestaurant->id;
             $user->save();
