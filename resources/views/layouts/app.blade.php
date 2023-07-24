@@ -25,9 +25,9 @@
 
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+                <a class="navbar-brand d-flex align-items-center" href="{{ url('admin') }}">
                     <div class="logo_laravel">
-                       
+                       <img src="{{asset('img/deliveboo-high-resolution-logo-color-on-transparent-background.png')}}" alt="" width="200px">
                     </div>
                     {{-- config('app.name', 'Laravel') --}}
                 </a>
@@ -40,7 +40,9 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <img src="{{asset('img/deliveboo-high-resolution-logo-color-on-transparent-background.png')}}" alt="" width="200px">
+                            {{-- <a href="{{ url('admin') }}"> 
+                                <img src="{{asset('img/deliveboo-high-resolution-logo-color-on-transparent-background.png')}}" alt="" width="200px">
+                            </a> --}}
                         </li>
                     </ul>
 
