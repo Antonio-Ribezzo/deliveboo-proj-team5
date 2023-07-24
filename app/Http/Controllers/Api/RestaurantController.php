@@ -48,4 +48,13 @@ class RestaurantController extends Controller
             ]);
         }
     }
+
+    public function getItems(Restaurant $restaurant)
+    {
+        return response()->json([
+            'success' => true,
+            'items' => $restaurant->items
+        ]);
+    }
 }
+

@@ -22,7 +22,7 @@ use App\Http\Controllers\Api\TypeController;
 // });
 
 Route::get('/restaurants', [RestaurantController::class, 'index']);
+Route::get('/restaurants/{restaurant}/items', [RestaurantController::class, 'getItems']);
 Route::get('/restaurants/{slug}', [RestaurantController::class, 'show']);
 
 Route::get('/types', [TypeController::class, 'index']);
-Route::get('/items', [ItemController::class, 'index']);
