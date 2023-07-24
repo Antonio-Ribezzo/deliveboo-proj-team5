@@ -1,12 +1,16 @@
 @extends('layouts.app')
 @section('content')
-<div class="bg-food div-food">
-  <div class="img-login" >
+<div class="bg-food div-food d-flex justify-content-center align-items-center px-5">
+  {{-- <div class="img-login"></div> --}}
+  <div class="d-flex justify-content-around align-items-center">
+    <div class="mx-2  div-register">
+      <a class="text-decoration-none" href="{{ route('login') }}">{{ __('Login') }}
+      </a>
+    </div>
+    <div class="mx-2  div-register">
+      <a class="text-decoration-none" href="{{ route('register') }}">{{ __('Register') }}</a>
+    </div>
   </div>
-  <div class="d-flex w-50 m-auto mt-4 justify-content-around ">
-    <div class="div-register ms-5">Login</div>
-    <div class="div-register me-5">Register</div>
-  </div>
+  <div class="div-color "></div>
 </div>
-<div class="div-color "></div>
 @endsection

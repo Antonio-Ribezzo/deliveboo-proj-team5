@@ -70,9 +70,11 @@
                                 </div>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="formFile" class="form-label">Upload image</label>
-                                <input class="form-control" type="file" id="formFile" name="restaurant_image">
+                            <div class="row mb-4">
+                                <label for="formFile" class="col-md-4 col-form-label text-md-right">Upload image</label>
+                                <div class="col-md-6">
+                                    <input class="form-control" type="file" id="formFile" name="restaurant_image">
+                                </div>
                             </div>
 
                             <div class="row mb-4">

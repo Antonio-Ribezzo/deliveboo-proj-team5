@@ -78,40 +78,52 @@
 
 
 .div-food{
-    height: 100%;
-}
-
-main{
-    height: 500px;
-}
-
-.img-login{
-    height: 100%;
+    height: calc(100vh - 100px);
     background-image: url("/public/img/burger-4145977_1280.jpg");
     background-size: cover;
-    background-size: 100%;
+    background-repeat: no-repeat;
     background-position: center;
-    border-bottom-left-radius:100% ;
-    border-bottom-right-radius:100%;
-    // filter: blur(1px);
+
+
 }
+
+// main{
+//     height: 500px;
+// }
+
+// .img-login{
+//     height: 60%;
+//     background-image: url("/public/img/burger-4145977_1280.jpg");
+//     background-size: contain;
+//     background-repeat: no-repeat;
+//     background-size: 100%;
+//     background-position: center;
+//     border-bottom-left-radius:100% ;
+//     border-bottom-right-radius:100%;
+//     // filter: blur(1px);
+// }
 
 
 .div-register{
-padding: 180px;
-// background-image: url("/public/img/burger-3962996_1920.jpg");
-background-size: cover;
-background-size: 100%;
-background-position: center;
-border-radius: 20%;
-border: 2px solid black;
-transition: transform 1s;
-position: relative;
-z-index: 2;
+    padding: 1rem;
+    // width: 20%;
+    // background-size: cover;
+    // background-size: 100%;
+    // background-position: center;
+    border-radius: 20%;
+    border: 2px solid rgb(69, 67, 67);
+    transition: transform 1s;
+    background-color: rgba(255, 255, 255, 0.315);
+    cursor: pointer;
+    // position: relative;
+    // z-index: 2;
+    a{
+        color: black;
+    }
 }
 
  .div-register:hover{
-    transform: scale(1.02);
+    transform: scale(1.2);
  }
 
  .div-color{
