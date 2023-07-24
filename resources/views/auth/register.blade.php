@@ -119,8 +119,8 @@
                                 </div>
                             </div>
 
-                            <div class="mb-4 row mb-0">
-                                <div class="col-md-6 offset-md-4">
+                            <div class="mb-4 row mb-0 text-center">
+                                <div class="col-md-6 w-100">
                                     <button id="submit-btn" type="submit" class="btn btn-primary">
                                         {{ __('Register') }}
                                     </button>
