@@ -75,8 +75,53 @@
 //     font-weight: 400;
 // }
 
-.bg-food{
-    background-image: url("/public/img/bigstock-assorted-fast-food-junk-food-277980769-900x580.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+
+
+.div-food{
+    height: 100%;
 }
+
+main{
+    height: 500px;
+}
+
+.img-login{
+    height: 100%;
+    background-image: url("/public/img/burger-4145977_1280.jpg");
+    background-size: cover;
+    background-size: 100%;
+    background-position: center;
+    border-bottom-left-radius:100% ;
+    border-bottom-right-radius:100%;
+    // filter: blur(1px);
+}
+
+
+.div-register{
+padding: 180px;
+// background-image: url("/public/img/burger-3962996_1920.jpg");
+background-size: cover;
+background-size: 100%;
+background-position: center;
+border-radius: 20%;
+border: 2px solid black;
+transition: transform 1s;
+position: relative;
+z-index: 2;
+}
+
+ .div-register:hover{
+    transform: scale(1.02);
+ }
+
+ .div-color{
+    background-color:rgb(241, 173, 0) ;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 70px;
+    border-top-left-radius:100%;
+    border-top-right-radius:100%;
+    z-index: 1;
+ }
