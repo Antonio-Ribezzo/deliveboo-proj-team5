@@ -19,13 +19,9 @@ class TypeSeeder extends Seeder
             'Pizza',
             'Chinese Cuisine',
             'Kebab',
-            'ice cream',
-            'Sweets',
-            'Indian Cuisine',
+            'ice cream & sweets',
             'Hamburger & Sandwich',
             'Breakfast',
-            'Piadina',
-            'Mexican Cuisine',
             'Sushi',
             'Italian Cuisine'
         ];
