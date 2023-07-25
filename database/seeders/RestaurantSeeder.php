@@ -25,7 +25,7 @@ class RestaurantSeeder extends Seeder
                 'p_iva' => '12345678901',
                 'slug' => 'ristorante-pizzeria-italia',
                 'restaurant_image' => 'restaurant_images/italian_restaurant.jpeg',
-                'type_ids' => [1,12],
+                'type_ids' => [1,8],
             ],
             [
                 'user_id' => 2, // ID dell'utente associato al ristorante (sostituire con l'ID corretto)
@@ -34,7 +34,7 @@ class RestaurantSeeder extends Seeder
                 'p_iva' => '98765432109',
                 'slug' => 'pasta-e-basta',
                 'restaurant_image' => 'restaurant_images/pasta_restaurant.jpeg',
-                'type_ids' => [1, 12],
+                'type_ids' => [1, 8],
             ],
             [
                 'user_id' => 3, // ID dell'utente associato al ristorante (sostituire con l'ID corretto)
@@ -43,7 +43,7 @@ class RestaurantSeeder extends Seeder
                 'p_iva' => '45678901234',
                 'slug' => 'sushi-master',
                 'restaurant_image' => 'restaurant_images/sushi_restaurant.webp',
-                'type_ids' => [2, 11],
+                'type_ids' => [2, 7],
             ],
             [
                 'user_id' => 4, // ID dell'utente associato al ristorante (sostituire con l'ID corretto)
@@ -52,7 +52,7 @@ class RestaurantSeeder extends Seeder
                 'p_iva' => '56789012345',
                 'slug' => 'panini-express',
                 'restaurant_image' => 'restaurant_images/panini_restaurant.jpeg',
-                'type_ids' => [7, 12],
+                'type_ids' => [3, 5],
             ],
         ];
 
