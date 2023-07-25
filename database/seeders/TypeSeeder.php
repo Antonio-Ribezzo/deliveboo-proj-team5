@@ -17,16 +17,17 @@ class TypeSeeder extends Seeder
     {
         $types = [
             'Pizza',
-            'Chinese cuisine',
+            'Chinese Cuisine',
             'Kebab',
             'ice cream',
             'Sweets',
-            'Indian cuisine',
+            'Indian Cuisine',
             'Hamburger & Sandwich',
             'Breakfast',
             'Piadina',
-            'Mexican cuisine',
-            'Sushi'
+            'Mexican Cuisine',
+            'Sushi',
+            'Italian Cuisine'
         ];
 
         foreach ($types as $elem) {
