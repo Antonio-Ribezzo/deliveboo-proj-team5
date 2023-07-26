@@ -7,6 +7,10 @@ use App\Http\Requests\Orders\OrderRequest;
 use App\Models\Item;
 use Braintree\Gateway;
 use Illuminate\Http\Request;
+use DateTime;
+use App\Models\Admin\Order;
+use App\Models\Admin\ItemOrder;
+
 
 class OrderController extends Controller
 {
@@ -25,10 +29,23 @@ class OrderController extends Controller
 
     public function makePayment(OrderRequest $request, Gateway $gateway){
 
-        $item = Item::find($request->item);
+        $orderMessage = '';
+        $message = '';
+        $success = false;
+        $total = 0;
+        $data = $request->all();
+
+        $cart = $data['cart'];
+        //calcolare il totale dell'ordine
+        foreach ($cart as $product) {
+            $item = Item::where('id', $product['id'])->first();
+            $total += $item->price * $product['quantity'];
+        }
+
+
 
         $result = $gateway->transaction()->sale([
-            'amount' => $item->price,
+            'amount' => $total,
             'paymentMethodNonce' => $request->token,
             'options' => [
                 'submitForSettlement' => true
@@ -39,21 +56,41 @@ class OrderController extends Controller
 
         if($result->success){
 
-            $data = [
-                "success" => true,
-                "message" => "Transazione eseguita con successo!"
-            ];
+            $data['total_price'] = $total;
+            $data['date'] = new DateTime();
+            $orderMessage  = 'I dati non sono stati salvati';
+            $message = 'Il pagamento è stato effettuato';
+            $success = true;
+            $confNumb = 200;
+            //
+            //devo creare un ordine
+            $order = new Order();
+            $order->fill($data);
+            $order->save();
+
+            foreach ($cart as $product) {
+                $item_order = new ItemOrder();
+                $item_order->order_id = $order->id;
+                $item_order->item_id = $item['id'];
+                $item_order->qt_item = $item['quantity'];
+                $item_order->save();
+            }
 
             return response()->json($data, 200);
 
         } else {
 
+            $message = 'La transazione è stata rifiutata';
+            $success = false;
+            $confNumb = 401;
+
             $data = [
-                "success" => false,
-                "message" => "Transazione fallita!"
+                "success" => $success,
+                "message" => $message,
+                'data_confirmation' => $orderMessage
             ];
 
-            return response()->json($data, 401);
+            return response()->json($data, $confNumb);
         }
 
         return 'make payment';
