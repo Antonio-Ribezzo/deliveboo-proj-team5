@@ -28,5 +28,5 @@ Route::get('/restaurants/{slug}', [RestaurantController::class, 'show']);
 
 Route::get('/types', [TypeController::class, 'index']);
 
-Route::get('/orders/generate', [OrderController::class, 'generate']);
-Route::post('/make/payment', [OrderController::class, 'makePayment']);
+// Route::get('/orders/generate', [OrderController::class, 'generate']);
+Route::post('/payment', [OrderController::class, 'getInfoCustomer']);
