@@ -22,11 +22,15 @@
                                     <div class="card mb-4">
                                         <div class="card-body d-flex">
                                             <div class="restaurant-image">
-                                                <img src="{{ asset('storage/' . $restaurant->restaurant_image) }}" alt="Restaurant Image" class="img-dashboard">
+                                                <img src="{{ asset('storage/' . $restaurant->restaurant_image) }}" alt="" class="img-dashboard">
                                             </div>
                                             <div class="restaurant-details ms-4">
-                                                <h4 class=" mb-2 text-black a">{{ $restaurant->name }}</h4>
-                                                <p class="card-text fs-5">ADDRESS: {{ $restaurant->address }}</p>
+                                                <h4 class=" mb-5 text-black a">{{ $restaurant->name }}</h4>
+                                                <span class="card-text fs-5 mt-4">ADDRESS: </span>
+                                                <div class="d-flex flex-wrap mt-3 mb-5">
+                                                    <p class="card-text fs-5">{{ $restaurant->address }}</p>
+                                                </div>
+                                                <span class="card-text fs-5">Category:</span>
                                                 <div class="d-flex flex-wrap mt-3">
                                                     @foreach ($restaurant->types as $type)
                                                         <span class="btn btn-outline-warning  fs-6 me-2">{{ $type->name }}</span>
