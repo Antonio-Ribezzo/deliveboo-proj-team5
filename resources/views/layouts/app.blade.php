@@ -8,9 +8,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'DeliveBoo') }}</title>
+    <title>Deliveboo | Backend</title>
 
-
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="{{asset('hamburger.png')}}">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">

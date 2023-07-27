@@ -4,17 +4,16 @@
     <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
+                <div class="card  mb-5">
                     <div class="card-header">{{ __('Register') }}</div>
 
                     <div class="card-body">
                         <form id="formCreate" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                             @csrf
-
-
                             <div class="mb-4 row">
                                 <label for="email"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}*</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}*
+                                </label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email" required
@@ -31,7 +30,8 @@
 
                             <div class="mb-4 row">
                                 <label for="password"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Password') }}*</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Password') }}*
+                                </label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password" required minlength="8"
@@ -48,12 +48,13 @@
 
                             <div class="mb-4 row">
                                 <label for="password-confirm"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}
+                                </label>
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
                                         name="password_confirmation" autocomplete="new-password">
-                                        <div id="errorDiv2" style="display: none; color: red;">Password don't match.</div>
+                                    <div id="errorDiv2" style="display: none; color: red;">Password don't match.</div>
                                 </div>
                             </div>
 
@@ -127,24 +128,7 @@
                                 </div>
                             </div>
                         </form>
-                        <div class="modal" id="errorModal" tabindex="-1">
-                            <div class="modal-dialog">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title">Modal title</h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                  <p>select a category</p>
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                  <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div id="errorDiv" style="display: none; color: red;">Select almost a category.</div>
+                        <div id="errorDiv" style="display: none; color: red;">Select almost a category.</div>
                         <p class="my-4"><b>*Campo obbligatorio</b></p>
                     </div>
                 </div>
