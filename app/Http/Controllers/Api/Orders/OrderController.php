@@ -26,9 +26,8 @@ class OrderController extends Controller
     //     return response()->json( $data,200 );
     // }
 
-    public function getInfoCustomer(OrderRequest $request){
+    public function getInfoCustomer(Request $request){
 
-        // $orderMessage = '';
         $success = false;
         $total = 0;
         $data = $request->all();
@@ -47,14 +46,14 @@ class OrderController extends Controller
         //devo creare un ordine
         $order = new Order();
         $order->fill($data);
-        $order->save;
+        $order->save();
 
         // pivot
         foreach ($cart as $elem) {
             $item_order = new ItemOrder();
             $item_order->order_id = $order->id;
-            $item_order->item_id = $item['id'];
-            $item_order->qt_item = $item['quantity'];
+            $item_order->item_id = $elem['id'];
+            $item_order->qt_item = $elem['quantity'];
             $item_order->save();
         }
         return response()->json(
@@ -62,58 +61,5 @@ class OrderController extends Controller
                 'success' => true
             ]
         );
-
-
-
-        // $result = $gateway->transaction()->sale([
-        //     'amount' => $total,
-        //     'paymentMethodNonce' => $request->token,
-        //     'options' => [
-        //         'submitForSettlement' => true
-        //     ]
-        // ]);
-
-
-
-        // if($result->success){
-
-        //     $data['total_price'] = $total;
-        //     $data['date'] = new DateTime();
-        //     $orderMessage  = 'I dati non sono stati salvati';
-        //     $message = 'Il pagamento è stato effettuato';
-        //     $success = true;
-        //     $confNumb = 200;
-        //     //
-        //     //devo creare un ordine
-        //     $order = new Order();
-        //     $order->fill($data);
-        //     $order->save();
-
-        //     foreach ($cart as $product) {
-        //         $item_order = new ItemOrder();
-        //         $item_order->order_id = $order->id;
-        //         $item_order->item_id = $item['id'];
-        //         $item_order->qt_item = $item['quantity'];
-        //         $item_order->save();
-        //     }
-
-        //     return response()->json($data, 200);
-
-        // } else {
-
-        //     $message = 'La transazione è stata rifiutata';
-        //     $success = false;
-        //     $confNumb = 401;
-
-        //     $data = [
-        //         "success" => $success,
-        //         "message" => $message,
-        //         'data_confirmation' => $orderMessage
-        //     ];
-
-        //     return response()->json($data, $confNumb);
-        // }
-
-        // return 'make payment';
     }
 }

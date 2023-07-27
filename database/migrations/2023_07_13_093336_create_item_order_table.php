@@ -23,6 +23,7 @@ return new class extends Migration
 	        $table->tinyInteger('qt_item');
 
 	        $table->primary(['item_id', 'order_id']);
+            $table->timestamps();
         });
     }
 
