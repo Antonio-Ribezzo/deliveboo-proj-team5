@@ -67,7 +67,8 @@
                     <div class="d-flex">
                         <button type="submit" id="submit-btn" class="btn btn-warning text-white me-1 fs-5">Edit</button>
                         <a class="btn btn-warning text-white me-3 fs-5 text-decoration-none"
-                            href="{{ route('admin.items.index') }}">&larr;</a>
+                            href="{{ route('admin.items.index') }}">&larr;
+                        </a>
                     </div>
 
                 </form>
