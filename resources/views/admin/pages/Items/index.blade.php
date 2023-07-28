@@ -8,24 +8,24 @@
           <a class="btn btn-warning text-white me-3 fs-5" href="{{ route('admin.dashboard') }}">Back</a>
       </div>
 
-      <h2 class="mt-4 text-center">Menu</h2>
+      <h2 class="mt-4 text-center text-white">Menu</h2>
 
-      <div class="mt-5 container p-3">
+      <div class="mt-3 container">
         <div class="row">
-          <table class="table align-middle table-dish">
+          <table class="table align-middle">
             <thead>
               <tr>
-                <th scope="col" style="border-top-left-radius: 10px;">Id</th>
+                <th scope="col" >Id</th>
                 <th scope="col">Dish Name</th>
                 <th scope="col">Price</th>
                 <th scope="col">Available</th>
-                <th scope="col" style="border-top-right-radius: 10px;">Actions</th>
+                <th scope="col">Actions</th>
               </tr>
             </thead>
             <tbody>
-            @foreach ($items as $elem)
+            @foreach ($items as $index => $elem)
               <tr>
-                <th scope="row">{{ $elem->id }}</th>
+                <th scope="row">{{ $index + 1}}</th>
                 <td><a class="text-decoration-none text-black text-capitalize" href="{{ route('admin.items.show', $elem) }}">{{ $elem->name }}</a></td>
                 <td>{{ $elem->price }} &euro;</td>
                 <td>{{ ($elem->available === 1) ? "Available" : "Not Available" }}</td>
