@@ -26,7 +26,7 @@
                                                 <div>
                                                     <div id="containerTitle" class="d-flex justify-content-between align-items-center">
                                                         <h2 class="text-black text-capitalize">{{ $restaurant->name }}</h2> 
-                                                        <i class="fa-solid fa-bell fs-3"></i>   
+                                                        {{-- <i class="fa-solid fa-bell fs-3"></i>    --}}
                                                     </div>
                                                     <span class="card-text fs-5 mt-4 text-capitalize">address: </span>
                                                     <span class="card-text fs-5"><strong>{{ $restaurant->address }}</strong></span>

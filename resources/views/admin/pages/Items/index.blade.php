@@ -5,7 +5,7 @@
   <div class="container py-4 p-2">
       <div>
           <a class="btn btn-warning text-white me-3 fs-5" href="{{ route('admin.items.create') }}">New Dish</a>
-          <a class="btn btn-warning text-white me-3 fs-5" href="{{ route('admin.dashboard') }}">Back</a>
+          <a class="btn btn-warning text-white me-3 fs-5" href="{{ route('admin.dashboard') }}">&larr;</a>
       </div>
 
       <h2 class="mt-4 text-center text-white">Menu</h2>
