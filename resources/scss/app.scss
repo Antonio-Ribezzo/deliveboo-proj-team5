@@ -124,3 +124,60 @@
     transform: scale(1.1);
 }
 
+.div-create-dish{
+    height: calc(100vh - 75.4px);
+    color: white;
+    h1{
+        text-shadow: 3px 3px 6px black;
+    }
+    label{
+        text-shadow: 3px 3px 5px black;
+    }
+    p{
+        text-shadow: 3px 3px 5px black;
+    }
+}
+
+.div-create-dish::before {
+    content: "";
+    background-image: url("/public/img/cibo-con-ingredienti.jpg");
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0.5);
+    z-index: -1;
+    opacity: 1;
+}
+
+
+.container-list::before{
+    content: "";
+    background-image: url("/public/img/pasta-fresca-con-sostanziosa-bolognese-e-parmigiano-generata-da-ai.jpg");
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0.7);
+    z-index: -1;
+    opacity: 1;
+}
+
+
+.background-img-dish{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 75.4px);
+    background-image: url("/public/img/bistecca-di-designazione-degli-alimenti-sul-piatto-bianco\ \(1\).jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+     
+}

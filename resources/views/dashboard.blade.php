@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="background-img pt-3"> 
+<div class="background-img "> 
 
     <div class="container">
         <h2 class="fs-4 mb-3 text-white-Dashboard">Dashboard</h2>
