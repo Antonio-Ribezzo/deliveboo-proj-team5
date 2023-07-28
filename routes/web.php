@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\RestaurantController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
-
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\ItemController;
 
 /*
@@ -39,6 +39,9 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
     // rotta risorsa items
     Route::resource('/items', ItemController::class);
+
+    // rotta orders
+    Route::get('/orders', [OrderController::class, 'index'])->name('orders');
 });
 
 

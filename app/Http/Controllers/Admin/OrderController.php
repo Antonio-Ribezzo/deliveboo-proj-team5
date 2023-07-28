@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Order;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -15,7 +16,11 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $user = User::find(auth()->user()->id);
+
+        $orders = $user->restaurant->orders;
+
+        return view('admin.pages.orders.index', compact('user', 'orders'));
     }
 
     /**
