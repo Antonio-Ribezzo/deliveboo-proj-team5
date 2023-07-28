@@ -33,7 +33,7 @@
                     <td>{{ $order->total_price }} &euro;</td>
                     <td>
                         @foreach ($order->items as $item)
-                            <li>{{ $item->name }} <span>x{{ $item->pivot->qt_item }}</span></li>
+                            <li>{{ $item->name }} <span class="fw-bold">x{{ $item->pivot->qt_item }}</span></li>
                         @endforeach
                     </td>
                     <td>{{ $order->customer_notes }}</td>
