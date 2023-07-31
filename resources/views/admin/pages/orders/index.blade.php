@@ -1,15 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-order" >
-    <div class=" py-4 container">
-        <div>
-            <a class="btn btn-primary" href="{{ route('admin.dashboard') }}">Back</a>
-        </div>
-
+<div class="container-order container" >
+    <div class=" pt-4 ">
+            <a class="btn btn-warning text-white me-3 fs-5"  href="{{ route('admin.dashboard') }}">&larr;</a>
         <h2 class="mt-4 text-center text-white-Dashboard  fs-1">Orders</h2>
 
-        <div class="mt-5">
+        <div class="mt-5 container">
             <div class="row">
                 <table class="table align-middle">
                 <thead>
