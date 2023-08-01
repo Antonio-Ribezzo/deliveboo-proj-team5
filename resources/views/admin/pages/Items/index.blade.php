@@ -34,13 +34,13 @@
 
                   <a class="btn btn-primary me-3" href="{{ route('admin.items.edit', $elem) }}">Edit</a>
 
-                  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal">
+                  <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-{{ $elem->id }}">
                     Delete
                   </button>
 
                       {{-- modale elimina piatto --}}
 
-                      <div class="modal" tabindex="-1" id="modal">
+                      <div class="modal" tabindex="-1" id="modal-{{ $elem->id }}">
                         <div class="modal-dialog">
                           <div class="modal-content">
                             <div class="modal-header">

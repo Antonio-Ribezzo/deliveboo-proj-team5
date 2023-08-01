@@ -157,8 +157,9 @@ class ItemController extends Controller
      * @param  \App\Models\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Item $item)
+    public function destroy($id)
     {
+        $item = Item::findOrFail($id);
         $item->delete();
 
         return redirect()->route('admin.items.index');
