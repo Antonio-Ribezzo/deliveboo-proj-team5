@@ -17,7 +17,7 @@
                         @enderror
                     </div>
     
-                    <div class="form-group">
+                    <div class="form-group my-2">
                         <label class="form-label">Ingredients*</label>
                         <input type="text" class="form-control @error('ingredients') is-invalid @enderror" required
                             name="ingredients">
