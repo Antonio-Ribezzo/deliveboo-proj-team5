@@ -10,6 +10,7 @@
     
                     <div class="form-group">
                         <label class="form-label">Name*</label>
+                        
                         <input type="text" maxlength="100" class="form-control @error('name') is-invalid @enderror" required
                             name="name">
                         @error('name')
